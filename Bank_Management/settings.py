@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
 from pathlib import Path
+import dj_database_url
+
 import environ
 env=environ.Env()
 environ.Env.read_env()
@@ -91,16 +93,24 @@ WSGI_APPLICATION = 'Bank_Management.wsgi.application'
 
 
 #Database code for postgresql
+# DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.postgresql',
+#        'NAME': env("DB_NAME"),
+#        'USER': env("DB_USER"),
+#        'PASSWORD': env("DB_PASSWORD"),
+#        'HOST': env("DB_HOST"),
+#        'PORT': env("DB_PORT"),
+#    }
+# }
+
+
 DATABASES = {
-   'default': {
-       'ENGINE': 'django.db.backends.postgresql',
-       'NAME': env("DB_NAME"),
-       'USER': env("DB_USER"),
-       'PASSWORD': env("DB_PASSWORD"),
-       'HOST': env("DB_HOST"),
-       'PORT': env("DB_PORT"),
-   }
-}
+    'default': dj_database_url.config(
+         default='postgresql://trinity_bank_q7v4_user:qNaHLDj7eanm51Khx7TAhU1MgWmHkYw2@dpg-d3kdnc7fte5s738a6g9g-a.oregon-postgres.render.com/trinity_bank_q7v4',
+         
+    )
+    }
 
 
 # Password validation
