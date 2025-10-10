@@ -1,0 +1,27 @@
+{% extends 'base.html' %} 
+{% load static %} 
+
+{% block head_title %}Trinity Bank{% endblock %} {% block content %}
+<div class="container mx-auto flex flex-col md:flex-row items-center my-12 md:my-24">
+
+    
+    <div class="flex flex-col w-full lg:w-1/2 justify-center items-start pt-12 pb-24 px-6 bg-white rounded-2xl bg-opacity-70 mx-3">
+        <h1 class="font-bold text-4xl my-4">Welcome to Trinity Bank</h1>
+        <p class="leading-normal mb-4">
+
+At Trinity Bank, we believe that modern banking should be simple, secure, and accessible. Our advanced management system is designed to streamline every aspect of your banking experience — from account creation and fund transfers to transaction tracking and user management.
+
+Built with the reliability of the Django framework, Trinity Bank combines cutting-edge technology with a focus on security and performance. Whether you're a customer or an admin, our platform ensures transparency, efficiency, and full control at your fingertips.
+
+Trinity Bank — Smart. Secure. Seamless.
+        </p>
+        <div class="flex justify-end w-full">
+            <a href="{% url 'register' %}" class="bg-blue-900 text-white rounded-none hover:bg-white hover:text-blue-900 hover:border-blue-900 shadow hover:shadow-lg py-2 px-4 border border-gray-900 hover:border-transparent">Register</a>
+        </div>
+    </div>
+    <div class="w-full lg:w-1/2 lg:py-6 text-center ">
+        <img class ="rounded-2xl" src ="{% static './img/Trinity_Bank.jpg' %}"/>
+    </div>
+</div>
+
+{% endblock %}
